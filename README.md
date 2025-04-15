@@ -8,11 +8,11 @@ Schematics
 
 Pre-Requisites:
 
-Internet connection
-Computer and Mobile Phone that support the following software:
-League of Legends: https://www.leagueoflegends.com/ro-ro/download/
-Expo: https://expo.dev/ as well as on the mobile device
-Flask: https://flask.palletsprojects.com/en/stable/
+- Internet connection
+- Computer and Mobile Phone that support the following software:
+- League of Legends: https://www.leagueoflegends.com/ro-ro/download/
+- Expo: https://expo.dev/ as well as on the mobile device
+- Flask: https://flask.palletsprojects.com/en/stable/
 
 Setup and Build:
 
