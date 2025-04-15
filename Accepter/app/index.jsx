@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { View, Text, Button, Alert, TouchableOpacity, StyleSheet  } from 'react-native';
 import io from 'socket.io-client';
+import SERVER_IP from "config.js"
 export default function Index() {
   
   const [status, setStatus] = useState("Find Match")
   const [buttonColor, setButtonColor] = useState('blue')
   const [timer, setTimer] = useState(0); 
   const [timerRunning, setTimerRunning] = useState(false);
-  const socket = io('http://192.168.1.129:5000');
+  const socket = io(SERVER_IP);
   useEffect(() => {
     socket.on('second_icon_found', () => {
       setStatus("Accept")
@@ -45,7 +46,7 @@ export default function Index() {
   }
   const handleFindMatch = async () => {
     try {
-      const response = await fetch('http://192.168.1.129:5000/find-match');
+      const response = await fetch(`${SERVER_IP}/find-match`);
 
       if (response.ok) {
         const data = await response.json();
@@ -66,7 +67,7 @@ export default function Index() {
 
   const handleCancel = async () => {
     try {
-      const response = await fetch('http://192.168.1.129:5000/cancel');
+      const response = await fetch(`${SERVER_IP}/cancel`);
 
       if (response.ok) {
         const data = await response.json();
@@ -82,7 +83,7 @@ export default function Index() {
   }
   const handleAccept= async () => {
     try {
-      const response = await fetch('http://192.168.1.129:5000/accept');
+      const response = await fetch(`${SERVER_IP}/accept`);
 
       if (response.ok) {
         const data = await response.json();
